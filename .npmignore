@@ -1,0 +1,7 @@
+doc/
+out/
+test/
+example/
+node_modules/
+.*
+*~
