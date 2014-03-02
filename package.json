@@ -1,7 +1,18 @@
 {
   "name": "execution",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Execution class.",
+  "author": {
+    "name": "yuanyan",
+    "email": "yuanyan.cao@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/taskjs/execution.git"
+  },
+  "bugs": {
+    "url": "https://github.com/taskjs/execution/issues"
+  },
   "scripts": {
     "test": "node test/runner.js"
   },
@@ -9,7 +20,6 @@
     "task",
     "execution"
   ],
-  "author": "yuanyan",
   "license": "MIT",
   "dependencies": {
     "lodash": "~2.4.1",
