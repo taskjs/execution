@@ -45,7 +45,7 @@ Execution.prototype.name = null;
 Execution.prototype.timeout = 0;
 Execution.prototype.force = false;
 Execution.prototype._status = null;
-Execution.prototype._inputs = null;
+Execution.prototype._inputs = [];
 Execution.prototype._options = {};
 Execution.prototype._logger = console;
 
@@ -64,7 +64,7 @@ Object.defineProperty(Execution.prototype, 'inputs', {
         return this._inputs;
     },
     set: function(val) {
-        if(val){
+        if(val != null){
             this._inputs = Array.isArray(val)? val: [val];
         }
     }
