@@ -1,4 +1,5 @@
 var Execution = require('../');
+
 var Concat = Execution.extend({
     name: 'concat',
     options: {
@@ -26,6 +27,7 @@ concat.run(
     { separator: "+" }
 ).then(function(res){
         console.log(res.contents);
+        assert.equal(res.contents, 'file1+file2+file3');
     }, function(err){
         console.log(err.message);
     });
