@@ -3,6 +3,12 @@ Execution
 
 Execution class.
 
+## Installation
+
+```
+npm install execution
+```
+
 ## Usage
 
 ```js
