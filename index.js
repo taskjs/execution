@@ -30,6 +30,15 @@ Execution.extend = function (props) {
     };
     util.inherits(ctor, this);
     _.extend(ctor.prototype, props);
+    ctor.name = props.name;
+    ctor.version = props.version;
+    ctor.keywords = props.keywords;
+    ctor.description = props.description;
+    ctor.author = props.author;
+    ctor.homepage = props.homepage;
+    ctor.repository = props.repository;
+    ctor.bugs = props.bugs;
+    ctor.options = props.options;
     ctor.extend = this.extend;
     ctor.Status = this.Status;
     ctor.Promise = this.Promise;
@@ -177,7 +186,7 @@ Execution.prototype._error = function(err) {
 };
 
 Execution.prototype.execute = function (resolve, reject) {
-    throw new Error("Method execute must override")
+    throw new Error("Must override the execute method")
 };
 
 Execution.prototype.error = function (err) {
