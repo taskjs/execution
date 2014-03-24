@@ -1,11 +1,12 @@
 {
   "name": "execution",
-  "version": "0.0.5",
-  "description": "Execution class.",
+  "version": "0.0.6",
+  "description": "Execution class for javascript task",
   "author": {
     "name": "yuanyan",
     "email": "yuanyan.cao@gmail.com"
   },
+  "main": "lib/execution.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/taskjs/execution.git"
