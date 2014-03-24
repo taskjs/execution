@@ -1,7 +1,7 @@
 Execution
 =========
 
-Execution class.
+Execution class for javascript task.
 
 ## Installation
 
@@ -15,7 +15,6 @@ npm install execution
 var Execution = require('execution');
 
 var Concat = Execution.extend({
-    name: 'concat',
     options: {
         separator: {
             description: "Concatenated input will be joined on this string.",

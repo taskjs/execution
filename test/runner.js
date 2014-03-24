@@ -1,7 +1,6 @@
 var Execution = require('../');
 
 var Concat = Execution.extend({
-    name: 'concat',
     options: {
         separator: {
             description: "Concatenated input will be joined on this string.",
