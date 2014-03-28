@@ -1,9 +1,9 @@
 {
   "name": "execution",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Execution class for javascript task",
   "author": {
-    "name": "yuanyan",
+    "name": "Yuanyan Cao",
     "email": "yuanyan.cao@gmail.com"
   },
   "main": "lib/execution.js",

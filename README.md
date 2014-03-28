@@ -44,3 +44,9 @@ concat.run(
         console.log(err.message);
     });
 ```
+
+## Release History
+* 2014-03-28    0.1.0    Initial release.
+
+## License
+Copyright (c) 2014 Yuanyan Cao. Licensed under the MIT license.
