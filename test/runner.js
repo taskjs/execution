@@ -3,8 +3,10 @@ var Execution = require('../');
 var Concat = Execution.extend({
     options: {
         separator: {
-            description: "Concatenated input will be joined on this string.",
-            default: process.platform === 'win32' ? '\r\n' : '\n'
+            default: process.platform === 'win32' ? '\r\n' : '\n',
+            type: 'string',
+            label: 'separator string',
+            placeholder: 'concatenated input will be joined on this string'
         }
     },
     execute: function(resolve){
