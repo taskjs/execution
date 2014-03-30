@@ -46,6 +46,7 @@ concat.run(
 ```
 
 ## Release History
+* 2014-03-31    0.1.1    Return the origin promise when rejected.
 * 2014-03-28    0.1.0    Initial release.
 
 ## License
