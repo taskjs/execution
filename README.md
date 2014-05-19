@@ -37,7 +37,12 @@ var Concat = Execution.extend({
 var concat = new Concat();
 concat.run(
     [ {contents: 'file1'}, {contents: 'file2'}, {contents: 'file3'} ],
-    { separator: "+" }
+    { separator: "+" },
+    console,
+    {
+        ignore: true,
+        timeout: 200
+    }
 ).then(function(res){
         console.log(res.contents);
     }, function(err){
@@ -46,6 +51,7 @@ concat.run(
 ```
 
 ## Release History
+* 2014-05-19    0.1.2    Add setting param for general options.
 * 2014-03-31    0.1.1    Return the origin promise when rejected.
 * 2014-03-28    0.1.0    Initial release.
 

@@ -1,4 +1,5 @@
 var Execution = require('../');
+var assert = require('assert');
 
 var Concat = Execution.extend({
     options: {
@@ -13,22 +14,73 @@ var Concat = Execution.extend({
         var inputs = this.inputs;
         var options = this.options;
         var separator = options.separator;
-        var contents = inputs.map(function(record){
-            return record.contents;
-        }).reduce(function (c1, c2) {
+        var contents = '';
+
+        if(inputs.length > 2){
+            contents = inputs.map(function(record){
+                return record.contents;
+            }).reduce(function (c1, c2) {
                 return String(c1) + String(separator) + String(c2);
-            })
-        resolve({contents: contents});
+            });
+        }
+
+        setTimeout(function(){
+            resolve({contents: contents});
+        }, 200)
+
     }
 });
 
-var concat = new Concat();
-concat.run(
+(new Concat).run(
     [ {contents: 'file1'}, {contents: 'file2'}, {contents: 'file3'} ],
-    { separator: "+" }
+    { separator: "+" },
+    console
 ).then(function(res){
         console.log(res.contents);
         assert.equal(res.contents, 'file1+file2+file3');
     }, function(err){
         console.log(err.message);
+    }).catch(function(e){
+        process.nextTick(function () {
+            throw e;
+        });
+    });
+
+
+(new Concat).run(
+    [ {contents: 'file1'}, {contents: 'file2'}, {contents: 'file3'} ],
+    { separator: "+" },
+    console,
+    {
+        timeout: 100
+    }
+).then(function(res){
+        console.log(res.contents);
+        assert.equal(res.contents, 'file1+file2+file3');
+    }, function(err){
+        console.log(err.message);
+        assert.equal(err.message, 'Execution timed out.');
+    }).catch(function(e){
+        process.nextTick(function () {
+            throw e;
+        });
+    });
+
+
+(new Concat).run(
+    [ {contents: 'file1'}, {contents: 'file2'}, {contents: 'file3'} ],
+    { separator: "+" },
+    console,
+    {
+        ignore: true
+    }
+).then(function(res){
+        assert.equal(res.contents, '');
+    }, function(err){
+        console.log(err.message);
+        throw err;
+    }).catch(function(e){
+        process.nextTick(function () {
+            throw e;
+        });
     });
