@@ -51,7 +51,8 @@ concat.run(
 ```
 
 ## Release History
-* 2015-02-05    0.1.3    Fix custom option merge error.
+* 2015-02-05    0.1.5    Fix options merge error.
+* 2015-02-05    0.1.4    Fix custom options merge error.
 * 2014-05-19    0.1.3    Fix default option error.
 * 2014-05-19    0.1.2    Add setting param for general options.
 * 2014-03-31    0.1.1    Return the origin promise when rejected.
