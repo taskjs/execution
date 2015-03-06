@@ -51,6 +51,7 @@ concat.run(
 ```
 
 ## Release History
+* 2015-03-06    0.1.6    Fix logger param is null.
 * 2015-02-05    0.1.5    Fix options merge error.
 * 2015-02-05    0.1.4    Fix custom options merge error.
 * 2014-05-19    0.1.3    Fix default option error.
